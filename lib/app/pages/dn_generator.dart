@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:domain_name_generator/main.dart';
 import 'package:domain_name_generator/misc/Colors.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 enum WordPosition {
