@@ -5,12 +5,12 @@ import 'package:domain_name_generator/data/models/model_zone.dart';
 import 'package:domain_name_generator/domain/entities/entity_keyword.dart';
 import 'package:domain_name_generator/domain/entities/entity_zone.dart';
 import 'package:domain_name_generator/domain/i_repositories/i_repository_dictionary_firebase.dart';
-import 'package:domain_name_generator/main.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class ImplRepositoryFirebase implements IRepositoryDictionaryFirebase {
   @override
-  Future<Map<String, List<dynamic>>> getDictionaryMap() async {
+  Future<Map<String, List<dynamic>>> getDictionaryMap(
+      FirebaseDatabase database) async {
     DataSnapshot keywords;
     DataSnapshot zones;
 
