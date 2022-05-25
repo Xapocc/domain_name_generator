@@ -1,4 +1,5 @@
 import 'package:domain_name_generator/app/app_root.dart';
+import 'package:domain_name_generator/data/repositories/impl_repository_firebase.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -15,10 +16,8 @@ void main() async {
   );
   database = FirebaseDatabase.instance;
 
-  DatabaseReference ref = database.ref();
-  ref.onValue.listen((DatabaseEvent event) {
-    print(event.snapshot.children.first.children.last.value);
-  });
+  ImplRepositoryFirebase r = ImplRepositoryFirebase();
+  print((await r.getDictionaryMap()).length);
 
   runApp(const AppRoot());
 }
